@@ -1,4 +1,5 @@
 # video-browser
+This project is powered by [youtube API v3](https://developers.google.com/youtube/v3/docs)
 
 ## Project setup
 ```

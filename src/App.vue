@@ -3,7 +3,11 @@
     <SearchBar @termChange="onTermChange" @search="searchHandler"></SearchBar>
     <div class="row">
       <VideoDetails :selectedVideo="selectedVideo" />
-      <VideosList :videos="videos" @videoSelected="onSelectVideo"></VideosList>
+      <VideosList v-if="videos.length" :videos="videos" @videoSelected="onSelectVideo"></VideosList>
+      <div class="img-home" v-else>
+        <img src="./assets/img/search-hm.svg" alt="..." />
+        <p>All youtube videos at your dispose 😜</p>
+      </div>
     </div>
   </div>
 </template>
@@ -54,3 +58,23 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.img-home {
+  width: 50%;
+  height: 40vh;
+  text-align: center;
+  margin: 40px auto;
+  opacity: 0.7;
+}
+
+.img-home p{
+  margin: 40px;
+}
+
+.img-home img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+</style>

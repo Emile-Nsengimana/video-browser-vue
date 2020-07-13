@@ -1,7 +1,9 @@
 <template>
   <div class="search-box">
-    <input class="inp-txt" @input="onInput" />
-    <button class="btn" @click="onSearch">Search</button>
+    <input class="inp-txt" placeholder="search..." @input="onInput" />
+    <div class="btn-group">
+      <button class="btn" @click="onSearch">Search</button>
+    </div>
   </div>
 </template>
 
@@ -21,24 +23,27 @@ export default {
 
 <style scoped>
 .search-box {
-  width: 50%;
-  margin: auto;
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+}
+.btn-group {
+  margin-left: 10px;
 }
 .inp-txt {
-  width: 80%;
+  flex: 1;
   line-height: 2.5rem;
   outline: none;
   box-shadow: 0 0 0.5rem 0 rgba(1, 59, 61, 0.5);
   border-radius: 5px;
   border-top: none;
   padding: 0 1rem;
-  margin: 2rem 1rem;
 }
 
 .btn {
   height: 2.5rem;
   outline: none;
-  background-color: rgb(7, 42, 71);
+  background-color: #072a47;
   color: whitesmoke;
   border-radius: 7px;
   border: none;
@@ -48,5 +53,11 @@ export default {
   background-color: whitesmoke;
   color: rgb(7, 42, 71);
   border: 0.5px solid rgb(7, 42, 71);
+}
+
+@media (min-width: 900px) {
+  .search-box {
+    width: 80%;
+  }
 }
 </style>
